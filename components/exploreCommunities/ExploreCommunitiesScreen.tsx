@@ -1,7 +1,7 @@
 const uri1 = 'https://images.unsplash.com/photo-1570655569079-d3fa2df6292d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60'
 
 import * as React from 'react';
-import { View, SafeAreaView, ScrollView, Dimensions, Image, Text, Switch, Slider } from 'react-native';
+import { View, SafeAreaView, ScrollView, Dimensions, Image, Text, Switch, Slider, ImageBackground } from 'react-native';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import { Header } from '../shared/Header';
 import { Feather } from '@expo/vector-icons';
@@ -28,11 +28,35 @@ function Row({renderLeft, renderRight}) {
     </View>
 }
 
-export function ExploreCommunitiesScreen() {
+export function CommunityTile({onPress}) {
+    return <TouchableOpacity onPress={onPress}><ImageBackground source={{uri: uri1}} style={{
+        aspectRatio: 5/4,
+        width: '100%',
+        borderRadius: 15,
+        marginVertical: 15,
+    }}
+    borderRadius={15}
+    >
+        
+    </ImageBackground>
+    <Text style={{fontWeight: 'bold', marginBottom: 30}}>Ski/Snowboard Buddies ⛷ 🏂</Text>
+    </TouchableOpacity>
+}
+
+export function ExploreCommunitiesScreen({navigation}) {
     return (
       <SafeAreaView style={{flex:1}}>
         <ScrollView>
-            <Header>Explore Communities</Header>
+            <View style={{paddingHorizontal: 15, paddingBottom: 100}}>
+                <Header>Explore Communities</Header>
+
+                <View style={{flex: 0, flexDirection: 'row', marginTop: 30, flexWrap: 'wrap'}}>
+                    <CommunityTile onPress={() => navigation.push('CommunityDetail')}/>
+                    <CommunityTile onPress={() => navigation.push('CommunityDetail')}/>
+                    <CommunityTile onPress={() => navigation.push('CommunityDetail')}/>
+                </View>
+            </View>
+            
 
         </ScrollView>
         </SafeAreaView>

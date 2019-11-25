@@ -5,6 +5,7 @@ import { View, SafeAreaView, ScrollView, Dimensions, Image, Text, Switch, Slider
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import { Header } from '../shared/Header';
 import { Feather } from '@expo/vector-icons';
+import {NavigationActions} from 'react-navigation';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { CircleIconButton } from '../shared/Button';
 import { SquareButton } from '../more/MoreScreen';
@@ -74,7 +75,12 @@ export function CommunityDetailScreen({navigation}) {
               />
 
               <View style={{padding: 15, flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-                <SquareButton onPress={() => {}} backgroundColor={'#ddd'} text={'Join'}/>
+                <SquareButton onPress={() => {
+                  navigation.reset({
+                    index: 0,
+                    routes: [{ name: 'Home' }],
+                  });
+                }} backgroundColor={'#ddd'} text={'Join'}/>
               </View>
               <View style={{height: 100, width: 100}}></View>
             </View>
