@@ -18,6 +18,7 @@ import { CommunityDetailScreen } from './components/communityDetail/CommunityDet
 import BottomSheet from 'reanimated-bottom-sheet'
 import { CommunityRow, AddCommunityRow } from './components/shared/CommunityRow';
 import { ExploreCommunitiesScreen } from './components/exploreCommunities/ExploreCommunitiesScreen';
+import { ModalScreen } from './components/modal/ModalScreen';
 
 function HomeScreen({ navigation }) {
   const bottomSheetRef = React.useRef();
@@ -84,6 +85,9 @@ export type RootParamList = {
   CommunityDetail: undefined,
   ExploreCommunities: undefined,
   EditDiscoverSettings: undefined,
+  Modal: {
+    renderContent: () => React.ReactElement
+  }
   MessagesDetail: {
     userName: string,
   }
@@ -110,6 +114,14 @@ export default function App() {
           <Stack.Screen name='Home' options={{
             headerShown: false
           }} component={HomeScreen} />
+          <Stack.Screen name='Modal' options={{
+            headerShown: false,
+            cardOverlayEnabled: true,
+            cardStyle: {
+              backgroundColor: ' rgba(255, 255, 255, 0.95)'
+            },
+            ...TransitionPresets.ModalSlideFromBottomIOS
+          }} component={ModalScreen} />
           <Stack.Screen
             name='ExploreCommunities'
             component={ExploreCommunitiesScreen}

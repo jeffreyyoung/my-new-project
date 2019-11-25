@@ -11,9 +11,9 @@ import { Header} from './../shared/Header';
 
 export function LikesMeScreen() {
   return (
-    <View style={{position: 'relative'}}>
+    <SafeAreaView style={{position: 'relative'}}>
       <ScrollView>
-        <SafeAreaView style={{paddingHorizontal: 100}}>
+        
           <View style={{paddingHorizontal: 15}}>
             <Header>Liked Me</Header>
             
@@ -32,12 +32,12 @@ export function LikesMeScreen() {
           </View>
           
           <PersonProfile onLike={() => {}} onNoThanks={() => {}} />
-        </SafeAreaView>
+        
       </ScrollView>
       <View style={{position: "absolute", bottom: 30, left: 30}}>
         <NoThanksButton onPress={() => {}}/>
       </View>
-    </View>
+      </SafeAreaView>
   );
 }
 
@@ -52,7 +52,7 @@ function MessagesScreen() {
         </SafeAreaView>
       </ScrollView>
       <View style={{position: "absolute", bottom: 30, right: 30}}>
-        <CircleIconButton name='plus'/>
+        <CircleIconButton name='plus' onPress={() => {}}/>
       </View>
     </View>
   );
@@ -82,7 +82,7 @@ function MeScreen() {
         </SafeAreaView>
       </ScrollView>
       <View style={{position: "absolute", bottom: 30, right: 30}}>
-        <CircleIconButton name='plus'/>
+        <CircleIconButton name='plus' onPress={() => {}}/>
       </View>
     </View>
   );

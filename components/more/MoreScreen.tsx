@@ -21,9 +21,8 @@ export function SquareButton({text, onPress, backgroundColor = 'white', textColo
 export function MoreScreen({navigation, showCommunitySwitcher}) {
 
   return (
-    <View style={{position: 'relative', flex: 1}}>
+    <SafeAreaView style={{position: 'relative', flex: 1}}>
       <ScrollView>
-        <SafeAreaView>
             <View style={{paddingHorizontal: 15}}>
             <TouchableOpacity onPress={showCommunitySwitcher}>
               <Header>Ski/Snowboard Buddies <Feather size={36} name='chevron-down'/></Header>
@@ -55,8 +54,7 @@ export function MoreScreen({navigation, showCommunitySwitcher}) {
                 )
               }}></SquareButton>
             </View>
-        </SafeAreaView>
       </ScrollView>
-    </View>
+    </SafeAreaView>
   );
 }
