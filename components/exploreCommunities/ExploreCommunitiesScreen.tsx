@@ -6,6 +6,7 @@ import { createMaterialTopTabNavigator } from '@react-navigation/material-top-ta
 import { Header } from '../shared/Header';
 import { Feather } from '@expo/vector-icons';
 import { TouchableOpacity } from 'react-native-gesture-handler';
+import { CommunityRow } from '../shared/CommunityRow';
 //var ScrollableTabView = require('react-native-scrollable-tab-view');
 const Tab = createMaterialTopTabNavigator();
 let photos = [];
@@ -47,9 +48,15 @@ export function ExploreCommunitiesScreen({navigation}) {
     return (
       <SafeAreaView style={{flex:1}}>
         <ScrollView>
-            <View style={{paddingHorizontal: 15, paddingBottom: 100}}>
+            <View style={{paddingHorizontal: 15}}>
                 <Header>Explore Communities</Header>
+            </View>
+            
+                <CommunityRow onPress={() => navigation.push('CommunityDetail')}/>
+                <CommunityRow onPress={() => navigation.push('CommunityDetail')}/>
+                <CommunityRow onPress={() => navigation.push('CommunityDetail')}/>
 
+            <View style={{paddingHorizontal: 15, paddingBottom: 100}}>
                 <View style={{flex: 0, flexDirection: 'row', marginTop: 30, flexWrap: 'wrap'}}>
                     <CommunityTile onPress={() => navigation.push('CommunityDetail')}/>
                     <CommunityTile onPress={() => navigation.push('CommunityDetail')}/>

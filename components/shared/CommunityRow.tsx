@@ -6,7 +6,7 @@ const uri1 = 'https://images.unsplash.com/photo-1570655569079-d3fa2df6292d?ixlib
 export function CommunityRow({onPress}) {
     return (
     <TouchableOpacity onPress={onPress}>
-        <View style={{flex: 0, flexDirection: 'row', borderBottomWidth: 1, borderColor: '#ddd', justifyContent: 'flex-start',padding: 15, alignItems: 'center'}}>
+        <View style={{flex: 0, flexDirection: 'row', justifyContent: 'flex-start',padding: 15, alignItems: 'center'}}>
             <Image style={{aspectRatio: 1, borderRadius: 75/2, width: 75, height: 75}} source={{uri: uri1}}></Image>
             <Text style={{marginLeft: 15, fontSize: 18}}>Ski/Snowboard Buddies 🏂⛷</Text>
         </View>
@@ -16,7 +16,7 @@ export function CommunityRow({onPress}) {
 export function AddCommunityRow({onPress}) {
     return (
     <TouchableOpacity onPress={onPress}>
-        <View style={{flex: 0, flexDirection: 'row', borderBottomWidth: 1, borderColor: '#ddd', justifyContent: 'flex-start',padding: 15, alignItems: 'center'}}>
+        <View style={{flex: 0, flexDirection: 'row', justifyContent: 'flex-start',padding: 15, alignItems: 'center'}}>
             <View style={{aspectRatio: 1, flex: 0, justifyContent: 'center', alignItems: 'center', borderRadius: 75/2, width: 75, height: 75}}>
                 <Feather size={40} name='plus'/>
             </View>

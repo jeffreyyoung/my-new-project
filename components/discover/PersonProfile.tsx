@@ -1,28 +1,17 @@
 const uri1 = 'https://images.unsplash.com/photo-1570655569079-d3fa2df6292d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60'
 
 import * as React from 'react';
-import { Text, View, SafeAreaView, ScrollView, Image } from 'react-native';
-import { NavigationNativeContainer } from '@react-navigation/native';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { Ionicons, Feather } from '@expo/vector-icons';
-import { createStackNavigator } from '@react-navigation/stack';
-import { TouchableOpacity } from 'react-native-gesture-handler';
-
-
-export function Header({children}) {
-  return <Text style={{fontSize: 35, fontWeight: 'bold', marginTop: 25}}>{children}</Text>
-}
+import { Text, View, Image } from 'react-native';
+import { Feather } from '@expo/vector-icons';
+import { CircleIconButton } from '../shared/Button';
+import { Header } from '../shared/Header';
 
 export function LikeButton({onPress}) {
-  return <TouchableOpacity onPress={onPress} style={{backgroundColor: 'white', borderWidth: 1, borderColor: '#ddd', padding: 10, borderRadius: 100}}>
-    <Feather name='thumbs-up' size={30}/>
-  </TouchableOpacity>
+  return <CircleIconButton color='black' onPress={onPress} name='thumbs-up' />
 }
 
 export function NoThanksButton({onPress}) {
-  return <TouchableOpacity onPress={onPress} style={{backgroundColor: 'white', borderWidth: 1, borderColor: '#ddd', padding: 10, borderRadius: 100}}>
-  <Feather name='x' size={30}/>
-</TouchableOpacity>
+  return <CircleIconButton color='black' onPress={onPress} name='x' />
 }
 
 export function PositionedLikeButton ({onPress}) {
@@ -41,22 +30,22 @@ export function QuestionCard({onLike, onNoThanks}) {
   </View>
 }
 
-function ImageCard({uri, onLike}: LikeableProps & {uri: string}) {
+export function ImageCard({uri, onLike}: LikeableProps & {uri: string}) {
   return <View style={{position: 'relative'}}>
     <Image source={{uri}} style={{width: '100%', aspectRatio:1, marginTop: 15}} borderRadius={25} />
-    <PositionedLikeButton onPress={() => onLike(uri)}/>
+    {onLike && <PositionedLikeButton onPress={() => onLike(uri)}/>}
   </View>;
 }
 
-function ConversationStarterCard({prompt,answer, onLike}) {
-  return <View style={{position: 'relative', backgroundColor: 'white', justifyContent: 'center', marginTop: 15, borderRadius: 25, padding: 30}}>
+export function ConversationStarterCard({backgroundColor = 'white', prompt, answer, onLike}: {backgroundColor?: string, prompt: string, answer: string, onLike?: any}) {
+  return <View style={{position: 'relative', backgroundColor: backgroundColor, justifyContent: 'center', marginTop: 15, borderRadius: 25, padding: 30}}>
     <Text style={{fontSize: 16}}>{prompt}</Text>
-    <Text style={{paddingTop: 30, fontSize: 24, paddingBottom: 50, fontWeight: 'bold', textAlign: 'center'}}>{answer}</Text>
-    <PositionedLikeButton onPress={onLike}/>
+    <Text style={{paddingTop: 30, fontSize: 24, paddingBottom: onLike ? 60 : 30, fontWeight: 'bold', textAlign: 'center'}}>{answer}</Text>
+    {onLike && <PositionedLikeButton onPress={onLike}/>}
   </View>
 }
 
-function BasicInfoCard(props) {
+export function BasicInfoCard(props) {
   return (<View style={{backgroundColor: 'white', justifyContent: 'center', marginTop: 15, borderRadius: 25, padding: 30}}>
     <View style={{flexDirection: 'row', alignItems: 'center', marginBottom: 15}}>
       <Feather name='calendar' size={16}/>

@@ -8,6 +8,7 @@ import { PersonProfile, NoThanksButton } from './../discover/PersonProfile';
 import { CircleIconButton } from './../shared/Button';
 import { Header} from './../shared/Header';
 import BottomSheet from 'reanimated-bottom-sheet'
+import { theme } from '../shared/Theme';
 
 export function SquareButton({text, onPress, backgroundColor = 'white', textColor = 'black'}) {
   return <TouchableOpacity onPress={onPress}>
@@ -21,7 +22,7 @@ export function SquareButton({text, onPress, backgroundColor = 'white', textColo
 export function MoreScreen({navigation, showCommunitySwitcher}) {
 
   return (
-    <SafeAreaView style={{position: 'relative', flex: 1}}>
+    <SafeAreaView style={{position: 'relative', flex: 1, backgroundColor: 'white'}}>
       <ScrollView>
             <View style={{paddingHorizontal: 15}}>
             <TouchableOpacity onPress={showCommunitySwitcher}>
@@ -36,10 +37,10 @@ export function MoreScreen({navigation, showCommunitySwitcher}) {
               </View>
               
               
-              <SquareButton text="View/Edit Profile" onPress={() => navigation.push('ViewEditProfile')}></SquareButton>
-              <SquareButton text="Edit Discover Settings" onPress={() => navigation.push('EditDiscoverSettings')}></SquareButton>
-              <SquareButton text="View Community" onPress={() => navigation.push('CommunityDetail')}></SquareButton>
-              <SquareButton text="Leave Skiing" onPress={() => {
+              <SquareButton backgroundColor={theme.primaryColor} textColor={'white'}  text="View/Edit Profile" onPress={() => navigation.push('ViewEditProfile')}></SquareButton>
+              <SquareButton backgroundColor={theme.primaryColor} textColor={'white'}  text="Edit Settings" onPress={() => navigation.push('EditDiscoverSettings')}></SquareButton>
+              <SquareButton backgroundColor={theme.primaryColor} textColor={'white'}  text="View Community" onPress={() => navigation.push('CommunityDetail')}></SquareButton>
+              <SquareButton backgroundColor={theme.primaryColor} textColor={'white'}  text="Leave Skiing" onPress={() => {
                 Alert.alert(
                   'Are you sure?', 
                   'All of your matches in this community will be lost.',

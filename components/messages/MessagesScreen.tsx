@@ -28,7 +28,7 @@ function ConversationPreview({item, onPress}) {
 
 export function MessagesScreen({navigation}) {
   return (
-    <View style={{position: 'relative', flex: 1}}>
+    <View style={{position: 'relative', backgroundColor: 'white', flex: 1}}>
         <SafeAreaView>
             <FlatList
                 data={messages}
@@ -44,7 +44,7 @@ export function MessagesScreen({navigation}) {
             />
         </SafeAreaView>
       <View style={{position: "absolute", bottom: 30, right: 30}}>
-        <CircleIconButton name='plus'/>
+        <CircleIconButton name='plus' onPress={() => {}}/>
       </View>
     </View>
   );

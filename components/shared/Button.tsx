@@ -7,10 +7,11 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Ionicons, Feather } from '@expo/vector-icons';
 import { createStackNavigator } from '@react-navigation/stack';
 import { TouchableOpacity } from 'react-native-gesture-handler';
+import { theme } from './Theme';
 
 
-export function CircleIconButton({name, onPress}) {
+export function CircleIconButton({name, onPress, color = theme.primaryColor }) {
     return <TouchableOpacity onPress={onPress} style={{backgroundColor: 'white', borderWidth: 1, borderColor: '#ddd', padding: 10, borderRadius: 100}}>
-    <Feather name={name} size={30}/>
+    <Feather name={name} color={color} size={30}/>
   </TouchableOpacity>
 }

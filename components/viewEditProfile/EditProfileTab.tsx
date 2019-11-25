@@ -32,7 +32,7 @@ export function EditProfileTab() {
                 <Text style={{fontSize: 18, marginVertical: 15}}>Conversation Starters</Text>
             </View>
 
-            {photos.map(p => (<TouchableOpacity key={p+'convo'} ><View style={{
+            {photos.slice(0,3).map(p => (<TouchableOpacity key={p+'convo'} ><View style={{
                 flex: 0,
                 padding: 15,
                 flexDirection: 'row',

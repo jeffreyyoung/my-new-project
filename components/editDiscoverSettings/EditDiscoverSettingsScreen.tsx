@@ -1,13 +1,7 @@
-const uri1 = 'https://images.unsplash.com/photo-1570655569079-d3fa2df6292d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60'
-
 import * as React from 'react';
-import { View, SafeAreaView, ScrollView, Dimensions, Image, Text, Switch, Slider } from 'react-native';
-import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
+import { View, SafeAreaView, ScrollView, Dimensions, Button, Text, Switch, Slider } from 'react-native';
 import { Header } from '../shared/Header';
-import { Feather } from '@expo/vector-icons';
-import { TouchableOpacity } from 'react-native-gesture-handler';
-//var ScrollableTabView = require('react-native-scrollable-tab-view');
-const Tab = createMaterialTopTabNavigator();
+import { theme } from '../shared/Theme';
 let photos = [];
 let i = 0;
 while(i < 6) {photos.push(i++)}
@@ -64,6 +58,11 @@ export function EditDiscoverSettingsScreen() {
             />
             <Text style={{paddingHorizontal: 15, paddingTop: 7.5}}>After turning of discover you can still message your matches, but you will no longer show up in discover.</Text>
             <View style={{height: 150, width: 50}}></View>
+            <View style={{paddingTop: 50, paddingBottom: 50}}>
+                <Button onPress={() => {}} color={theme.primaryColor} title="Logout"></Button>
+                <Button onPress={() => {}} color="red" title="Delete Account"></Button>
+            </View>
+            
           </SafeAreaView>
         </ScrollView>
       </View>

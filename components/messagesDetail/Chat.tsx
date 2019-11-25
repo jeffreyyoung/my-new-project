@@ -1,6 +1,7 @@
 import React from 'react';
-import { GiftedChat } from 'react-native-gifted-chat'
-import { KeyboardAvoidingView, Platform, View, SafeAreaView } from 'react-native';
+import { GiftedChat, InputToolbar, Bubble } from 'react-native-gifted-chat'
+import { KeyboardAvoidingView, Platform, View, SafeAreaView, Button } from 'react-native';
+import { theme } from '../shared/Theme';
 
 export class Chat extends React.Component<any, {messages: any[]}> {
   state = {
@@ -30,15 +31,38 @@ export class Chat extends React.Component<any, {messages: any[]}> {
     }))
   }
 
+  renderBubble(props) {
+    return (<Bubble {...props} wrapperStyle={{
+      right: {
+        backgroundColor: theme.primaryColor
+      }
+    } as any} />)
+  }
+
+  renderSend(props) {
+    return <Button {...props} title="Send" color={theme.primaryColor} />
+  }
+
+  renderToolbar(props) {
+    return <InputToolbar {...props} renderSend={this.renderSend} />
+  }
+
   render() {
     return (
+      <View style={{flex: 1, backgroundColor: 'white'}}>
       <GiftedChat
+        renderBubble={this.renderBubble}
+        renderInputToolbar={this.renderToolbar}
         messages={this.state.messages}
         onSend={messages => this.onSend(messages)}
         user={{
           _id: 1,
         }}
       />
+      {
+        Platform.OS === 'android' && <KeyboardAvoidingView behavior="padding" />
+      }
+      </View>
     )
   }
 }

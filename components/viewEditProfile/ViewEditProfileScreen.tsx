@@ -51,8 +51,8 @@ export function ViewEditProfileScreen() {
         
       }}
     >
-      <Tab.Screen name="Profile" component={ProfileTab} />
       <Tab.Screen name="Edit" component={EditProfileTab} />
+      <Tab.Screen name="Preview" component={ProfileTab} />
     </Tab.Navigator>
   );
 }

@@ -7,6 +7,7 @@ import { Chat } from './Chat';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import { DiscoverScreen } from '../discover/DiscoverScreen';
 import { TouchableOpacity } from 'react-native-gesture-handler';
+import { theme } from '../shared/Theme';
 //var ScrollableTabView = require('react-native-scrollable-tab-view');
 const Tab = createMaterialTopTabNavigator();
 
@@ -40,13 +41,16 @@ export function MessagesDetailScreen() {
       tabBarOptions={{
         upperCaseLabel: false,
         activeTintColor: 'black',
+        labelStyle: { color: 'black' },
         inactiveTintColor: 'gray',
         indicatorStyle: {
           backgroundColor: 'black'
         },
         indicatorContainerStyle: {
-          backgroundColor: 'white'
-        }
+          backgroundColor: 'white',
+          borderColor: theme.primaryColor
+        },
+        
         
       }}
     >

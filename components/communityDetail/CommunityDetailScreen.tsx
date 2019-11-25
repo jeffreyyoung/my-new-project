@@ -10,6 +10,7 @@ import { TouchableOpacity } from 'react-native-gesture-handler';
 import { CircleIconButton } from '../shared/Button';
 import { SquareButton } from '../more/MoreScreen';
 import { LinearGradient } from 'expo'
+import { theme } from '../shared/Theme';
 //var ScrollableTabView = require('react-native-scrollable-tab-view');
 const Tab = createMaterialTopTabNavigator();
 let photos = [];
@@ -75,12 +76,14 @@ export function CommunityDetailScreen({navigation}) {
               />
 
               <View style={{padding: 15, flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-                <SquareButton onPress={() => {
+                <SquareButton 
+                  textColor={'white'}
+                onPress={() => {
                   navigation.reset({
                     index: 0,
                     routes: [{ name: 'Home' }],
                   });
-                }} backgroundColor={'#ddd'} text={'Join'}/>
+                }} backgroundColor={theme.primaryColor} text={'Join'}/>
               </View>
               <View style={{height: 100, width: 100}}></View>
             </View>

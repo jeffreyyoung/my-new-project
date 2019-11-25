@@ -850,6 +850,13 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
+"@dudigital/react-native-zoomable-view@^1.0.14":
+  version "1.0.14"
+  resolved "https://registry.yarnpkg.com/@dudigital/react-native-zoomable-view/-/react-native-zoomable-view-1.0.14.tgz#3551126aa06923d88d736ced5a693282e2cd8158"
+  integrity sha512-MLvzR3wIMeHz+WsuC1+O66Dmgkk4JukRhrJrAHxJE49R6QOnfHYJgUpojPYqAC1IoReqw4FXdMiEgBDA7i80gw==
+  dependencies:
+    prop-types "^15.5.10"
+
 "@expo/react-native-action-sheet@^3.1.0":
   version "3.4.0"
   resolved "https://registry.yarnpkg.com/@expo/react-native-action-sheet/-/react-native-action-sheet-3.4.0.tgz#b385b650a1296a8f7411ef3cdccbaa5aef8429d5"
