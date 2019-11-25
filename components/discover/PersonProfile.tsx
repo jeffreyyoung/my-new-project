@@ -83,12 +83,12 @@ export function PersonProfile(props: PersonProfileProps) {
     return <View style={{paddingHorizontal: 15}}>
     <Header>Jonathan</Header>
     <Text style={{}}>Do you want to go skiing with Jonathan?</Text>
-    <ImageCard uri={uri1} onLike={props.onLike}/>
-    <ConversationStarterCard onLike={props.onLike} prompt="Believe it or not..." answer="I am missing a toe! 😳" />
+    <ImageCard uri={uri1} onLike={props.onLike} />
+    <ConversationStarterCard onLike={props.onLike} prompt="When/Where you can find me skiing..." answer="Alta and Snowbird every Saturday and Sunday... also when I get sick 🤫" /><ImageCard uri={uri1} onLike={props.onLike}/>
     <ImageCard uri={uri1} onLike={props.onLike} />
     <BasicInfoCard />
     <QuestionCard onLike={props.onLike} onNoThanks={props.onNoThanks}/>
-    <ConversationStarterCard onLike={props.onLike} prompt="When/Where you can find me skiing..." answer="Alta and Snowbird every Saturday and Sunday... also when I get sick 🤫" />
+    <ConversationStarterCard onLike={props.onLike} prompt="Believe it or not..." answer="I am missing a toe! 😳" />
     <ImageCard uri={uri1} onLike={props.onLike} />
     <ConversationStarterCard onLike={props.onLike} prompt="My worst skiing accident..." answer="Let's just say that's why I'm missing a toe." />
     <View></View>

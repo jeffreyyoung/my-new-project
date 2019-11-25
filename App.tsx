@@ -107,16 +107,13 @@ export default function App() {
             headerTintColor: 'black',
           }}
         >
-
+          <Stack.Screen name='Home' options={{
+            headerShown: false
+          }} component={HomeScreen} />
           <Stack.Screen
             name='ExploreCommunities'
             component={ExploreCommunitiesScreen}
           />
-
-
-          <Stack.Screen name='Home' options={{
-            headerShown: false
-          }} component={HomeScreen} />
           <Stack.Screen name='CommunityDetail' options={{
             headerShown: false
           }} component={CommunityDetailScreen} />
