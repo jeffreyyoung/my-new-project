@@ -2,7 +2,7 @@ import React from 'react';
 import { GiftedChat } from 'react-native-gifted-chat'
 import { KeyboardAvoidingView, Platform, View, SafeAreaView } from 'react-native';
 
-export class Chat extends React.Component<{tabLabel}, {messages: any[]}> {
+export class Chat extends React.Component<any, {messages: any[]}> {
   state = {
     messages: [],
   }

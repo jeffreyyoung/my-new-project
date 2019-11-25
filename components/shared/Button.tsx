@@ -9,8 +9,8 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
 
-export function CircleIconButton({name}) {
-    return <TouchableOpacity style={{backgroundColor: 'white', borderWidth: 1, borderColor: '#ddd', padding: 10, borderRadius: 100}}>
+export function CircleIconButton({name, onPress}) {
+    return <TouchableOpacity onPress={onPress} style={{backgroundColor: 'white', borderWidth: 1, borderColor: '#ddd', padding: 10, borderRadius: 100}}>
     <Feather name={name} size={30}/>
   </TouchableOpacity>
 }

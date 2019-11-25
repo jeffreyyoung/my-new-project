@@ -15,7 +15,7 @@ export function LikesMeScreen() {
       <ScrollView>
         <SafeAreaView style={{paddingHorizontal: 100}}>
           <View style={{paddingHorizontal: 15}}>
-            <Header>Likes You</Header>
+            <Header>Liked Me</Header>
             
           <View style={{position: 'relative', backgroundColor: 'white', justifyContent: 'flex-end', marginTop: 15, borderRadius: 25, padding: 30}}>
             <Text style={{fontSize: 16, marginBottom: 15}}>Jonathan said...</Text>
